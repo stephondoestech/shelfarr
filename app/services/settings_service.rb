@@ -40,7 +40,7 @@ class SettingsService
     auto_select_min_seeders: { type: "integer", default: 1, category: "auto_select", description: "Minimum seeders required for auto-selection (torrent only)" },
 
     # Updates
-    github_repo: { type: "string", default: "", category: "updates", description: "GitHub repository (e.g., username/shelfarr) for update notifications" }
+    github_repo: { type: "string", default: "Pedro-Revez-Silva/shelfarr", category: "updates", description: "GitHub repository for update notifications" }
   }.freeze
 
   CATEGORIES = {
