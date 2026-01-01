@@ -57,7 +57,7 @@ brew install rbenv ruby-build
 rbenv install 3.3.6
 
 # Clone and setup
-git clone https://github.com/yourusername/shelfarr.git
+git clone https://github.com/Pedro-Revez-Silva/shelfarr.git
 cd shelfarr
 bundle install
 bin/rails db:setup
@@ -150,4 +150,4 @@ bin/jobs             # Start background job worker
 
 ## License
 
-[MIT License](LICENSE)
+[GPL-3.0 License](LICENSE)
