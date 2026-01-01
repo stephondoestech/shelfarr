@@ -98,82 +98,6 @@
       border-color: var(--text-muted);
     }
 
-    /* Problem */
-    .problem {
-      padding: 60px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .problem h2 {
-      font-size: 1.75rem;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .stack-comparison {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 600px) {
-      .stack-comparison {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .stack {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-    }
-
-    .stack h3 {
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    .stack ul {
-      list-style: none;
-    }
-
-    .stack li {
-      padding: 8px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .stack li::before {
-      content: "→";
-      color: var(--accent);
-    }
-
-    .stack .missing {
-      color: var(--text-muted);
-      font-style: italic;
-    }
-
-    .stack .missing::before {
-      content: "?";
-      color: #ef4444;
-    }
-
-    .stack .highlight {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
-    .stack .highlight::before {
-      content: "✓";
-    }
-
     /* Features */
     .features {
       padding: 60px 0;
@@ -275,33 +199,6 @@
         <a href="https://github.com/Pedro-Revez-Silva/shelfarr#quick-start" class="btn btn-secondary">
           Quick Start
         </a>
-      </div>
-    </section>
-
-    <section class="problem">
-      <h2>The Problem</h2>
-      <div class="stack-comparison">
-        <div class="stack">
-          <h3>Video Stack (Complete)</h3>
-          <ul>
-            <li>Jellyseerr / Overseerr</li>
-            <li>Sonarr / Radarr</li>
-            <li>Prowlarr</li>
-            <li>qBittorrent / SABnzbd</li>
-            <li>Jellyfin / Plex</li>
-          </ul>
-        </div>
-        <div class="stack">
-          <h3>Book Stack (Was Incomplete)</h3>
-          <ul>
-            <li class="missing">No request UI</li>
-            <li class="missing">Readarr (ebooks only, buggy)</li>
-            <li>Prowlarr</li>
-            <li>qBittorrent / SABnzbd</li>
-            <li>Audiobookshelf</li>
-            <li class="highlight">Shelfarr fills the gap</li>
-          </ul>
-        </div>
       </div>
     </section>
 
