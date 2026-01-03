@@ -283,9 +283,6 @@ mkdir shelfarr && cd shelfarr
 curl -O https://raw.githubusercontent.com/Pedro-Revez-Silva/shelfarr/main/docker-compose.example.yml
 mv docker-compose.example.yml docker-compose.yml
 
-<span class="comment"># Generate master key</span>
-echo "RAILS_MASTER_KEY=$(openssl rand -hex 32)" > .env
-
 <span class="comment"># Edit paths in docker-compose.yml, then start</span>
 docker-compose up -d</pre>
       </div>

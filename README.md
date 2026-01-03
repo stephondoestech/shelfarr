@@ -21,17 +21,16 @@ mkdir shelfarr && cd shelfarr
 curl -O https://raw.githubusercontent.com/Pedro-Revez-Silva/shelfarr/main/docker-compose.example.yml
 mv docker-compose.example.yml docker-compose.yml
 
-# 2. Generate a master key
-echo "RAILS_MASTER_KEY=$(openssl rand -hex 32)" > .env
-
-# 3. Edit docker-compose.yml with your paths
+# 2. Edit docker-compose.yml with your paths
 #    - /path/to/audiobooks → your Audiobookshelf audiobooks folder
 #    - /path/to/ebooks → your Audiobookshelf ebooks folder
 #    - /path/to/downloads → your download client's completed folder
 
-# 4. Start
+# 3. Start
 docker-compose up -d
 ```
+
+A secret key is auto-generated on first run and saved to the data volume.
 
 Visit `http://localhost:3000` — the first user to register becomes admin.
 

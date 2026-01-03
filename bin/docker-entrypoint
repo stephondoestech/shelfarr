@@ -1,5 +1,23 @@
 #!/bin/bash -e
 
+# Auto-generate SECRET_KEY_BASE if not provided
+# This allows "just run docker-compose up" without manual key generation
+if [ -z "$RAILS_MASTER_KEY" ] && [ -z "$SECRET_KEY_BASE" ]; then
+  SECRET_FILE="/rails/storage/.secret_key_base"
+
+  if [ -f "$SECRET_FILE" ]; then
+    # Reuse existing auto-generated key
+    export SECRET_KEY_BASE=$(cat "$SECRET_FILE")
+    echo "Using existing auto-generated secret key"
+  else
+    # Generate new key and persist it
+    export SECRET_KEY_BASE=$(openssl rand -hex 64)
+    echo "$SECRET_KEY_BASE" > "$SECRET_FILE"
+    chmod 600 "$SECRET_FILE"
+    echo "Generated new secret key (saved to storage volume)"
+  fi
+fi
+
 # If running the rails server then create or migrate existing database
 if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
   ./bin/rails db:prepare
